@@ -1,6 +1,8 @@
 Step 1. Create Oracle Directory - create directory file_dir as "c:\files"
 Step 2. Grant All on the directory to your app schema  - grant all on directory file_dir to "my_schema" 
-Step 3. Run the scrpits below
+Step 3. grant execute on UTL_TCP to "my_schema" 
+Step 4. grant execute on UTL_FILE to "my_schema" 
+Step 5. Run the scrpits below
         @install.sql
 
 sample
