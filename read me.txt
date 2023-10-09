@@ -1,0 +1,18 @@
+Step 1. Create Oracle Directory - create directory file_dir as "c:\files"
+Step 2. Grant All on the directory to your app schema  - grant all on directory file_dir to "my_schema" 
+Step 3. Run the scrpits below
+        @install.sql
+
+sample
+begin
+	ftp_file_upload_api.ftp_file_upload(p_filename => ,   -- file name
+							  p_mimetype  =>  ,           -- file mime type
+							  p_blob      =>  ,           -- file blob
+							  p_dir_name  =>  ,           -- Oracle Directory name
+							  p_ftp_host  =>  ,           -- ftp host IP
+							  p_ftp_username  =>  ,       -- ftp username
+							  p_ftp_password  =>  ,       -- ftp password
+							  p_ftp_dir   =>  ,           -- ftp folder directory
+							  p_ftp_port  => );           -- ftp port
+							  
+end;				
