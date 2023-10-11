@@ -1,29 +1,4 @@
 CREATE OR REPLACE PACKAGE ftp AS
--- --------------------------------------------------------------------------
--- Name         : https://oracle-base.com/dba/miscellaneous/ftp.pks
--- Author       : Tim Hall
--- Description  : Basic FTP API. For usage notes see:
---                  https://oracle-base.com/articles/misc/ftp-from-plsql.php
--- Requirements : UTL_TCP
--- License      : Free for personal and commercial use.
---                You can amend the code, but leave existing the headers, current
---                amendments history and links intact.
---                Copyright and disclaimer available here:
---                https://oracle-base.com/misc/site-info.php#copyright
--- Ammedments   :
---   When         Who       What
---   ===========  ========  =================================================
---   14-AUG-2003  Tim Hall  Initial Creation
---   10-MAR-2004  Tim Hall  Add convert_crlf procedure.
---                          Make get_passive function visible.
---                          Added get_direct and put_direct procedures.
---   03-OCT-2006  Tim Hall  Add list, rename, delete, mkdir, rmdir procedures.
---   15-Jan-2008  Tim Hall  login: Include timeout parameter (suggested by Dmitry Bogomolov).
---   12-Jun-2008  Tim Hall  get_reply: Moved to pakage specification.
---   22-Apr-2009  Tim Hall  nlst: Added to return list of file names only (suggested by Julian and John Duncan)
---   24-May-2014  Tim Hall  Added license information.
---   05-Aug-2022  Tim Hall  Add passive_use_login_host (suggested by Martin Glass).
--- --------------------------------------------------------------------------
 
 TYPE t_string_table IS TABLE OF VARCHAR2(32767);
 
