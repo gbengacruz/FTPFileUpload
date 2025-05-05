@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 </head>
 <body>
-  <div class="container">
-    <h1>📤 FTP File Upload via Oracle PL/SQL</h1>
 
-    <h2>🔧 Setup Steps</h2>
-    <ol>
-      <li>Create Oracle directory: <code>CREATE DIRECTORY file_dir AS 'C:\files';</code></li>
-      <li>Grant access to your schema: <code>GRANT ALL ON DIRECTORY file_dir TO my_schema;</code></li>
-      <li>Grant network privileges: 
-        <ul>
-          <li><code>GRANT EXECUTE ON UTL_TCP TO my_schema;</code></li>
-          <li><code>GRANT EXECUTE ON UTL_FILE TO my_schema;</code></li>
-        </ul>
-      </li>
-      <li>Run the installation script:
-        <br /><code>@install.sql</code>
-      </li>
-    </ol>
+  <h1>FTP File Upload via Oracle PL/SQL</h1>
 
-    <h2>🧪 Sample Usage</h2>
-    <pre><code>
+  <h2>Setup Steps</h2>
+  <ol>
+    <li>Create Oracle directory:<br>
+      <code>CREATE DIRECTORY file_dir AS 'C:\files';</code>
+    </li>
+    <li>Grant access to your schema:<br>
+      <code>GRANT ALL ON DIRECTORY file_dir TO my_schema;</code>
+    </li>
+    <li>Grant network privileges:<br>
+      <code>GRANT EXECUTE ON UTL_TCP TO my_schema;</code><br>
+      <code>GRANT EXECUTE ON UTL_FILE TO my_schema;</code>
+    </li>
+    <li>Run the installation script:<br>
+      <code>@install.sql</code>
+    </li>
+  </ol>
+
+  <h2>Sample Usage</h2>
+  <pre>
 BEGIN
   ftp_file_upload_api.ftp_file_upload(
     p_filename     => 'example.txt',        -- File name
@@ -37,7 +39,7 @@ BEGIN
     p_ftp_port     => 21                    -- FTP port
   );
 END;
-    </code></pre>
-  </div>
+  </pre>
+
 </body>
 </html>
